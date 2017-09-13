@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "608397358755",
+    "firebase_url": "https://farm-36714.firebaseio.com",
+    "project_id": "farm-36714",
+    "storage_bucket": "farm-36714.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608397358755:android:34c09392ae6a4362",
+        "android_client_info": {
+          "package_name": "in.co.onetwork.farmbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608397358755-jte2fekcqb5b4emiq51j7hb6jb1m13r8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfFmS_J-suw2Xb99yynMHOStibiJlwfNs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
