@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.co.onetwork.farmbook.Homescreen">
-
-</android.support.constraint.ConstraintLayout>
+    android:gravity="center">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="City name"
+        android:id="@+id/cityn"
+        android:textSize="30dp"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:weightSum="2">
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
+        android:onClick="buy"
+        android:src="@drawable/buy"
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="sell"
+        android:src="@android:drawable/arrow_up_float"/>
+</LinearLayout>
+</LinearLayout>

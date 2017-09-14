@@ -2,6 +2,7 @@ package in.co.onetwork.farmbook;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 String pass=dataSnapshot.getValue(String.class);
                 if(pass!=null) {
                     if ((pass).equals(((EditText) findViewById(R.id.pass)).getText().toString())) {
+                        SharedPreferences.Editor sp=getSharedPreferences("login",MODE_PRIVATE).edit();
+                        sp.putString("uname",(((EditText)findViewById(R.id.uname)).getText().toString()));
+                        sp.commit();
                         Toast.makeText(MainActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
                         p.dismiss();
                         Intent i = new Intent(MainActivity.this, Homescreen.class);
