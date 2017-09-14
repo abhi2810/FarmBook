@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void login(View v){
         DatabaseReference userauth=user.child(((EditText)findViewById(R.id.uname)).getText().toString());
-        userauth.addValueEventListener(new ValueEventListener() {
+        userauth.child("pass").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User pass=dataSnapshot.getValue(User.class);
+                String pass=dataSnapshot.getValue(String.class);
                 if(pass!=null) {
-                    if ((pass.pass).equals(((EditText) findViewById(R.id.pass)).getText().toString())) {
+                    if ((pass).equals(((EditText) findViewById(R.id.pass)).getText().toString())) {
                         Toast.makeText(MainActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(MainActivity.this, Homescreen.class);
                         startActivity(i);
@@ -40,11 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(MainActivity.this, "Error!!"+databaseError.toString(), Toast.LENGTH_SHORT).show();
+
             }
         });
-
-
     }
     public void sign(View v){
         Intent i=new Intent(this,Signup.class);
