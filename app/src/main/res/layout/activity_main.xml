@@ -43,12 +43,17 @@
             android:onClick="login"
             android:text="Login" />
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="signup"
-            android:textSize="25dp"
             android:onClick="sign"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset Password"
+            android:textSize="25dp"
+            android:onClick="resetp"/>
     </LinearLayout>
 
 

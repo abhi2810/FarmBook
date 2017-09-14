@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Homescreen" />
-        <activity android:name=".Signup"></activity>
+        <activity android:name=".Signup" />
+        <activity android:name=".ForgetPass"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package in.co.onetwork.farmbook;
 
+import android.app.ProgressDialog;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,6 +45,10 @@ public class Signup extends AppCompatActivity {
         spin.setAdapter(array);
     }
     public void register(View v){
+        final ProgressDialog p=new ProgressDialog(this);
+        p.setTitle("Wait");
+        p.setMessage("Signing Up");
+        p.show();
         uname=useri.getText().toString();
         passw=pass.getText().toString();
         citys=city.getText().toString();
@@ -55,12 +60,14 @@ public class Signup extends AppCompatActivity {
         if(uname.equals("")||passw.equals("")||ques.equals("")||citys.equals("")||cpass.getText().toString().equals("")||uidn.equals("")||
                 qans.equals("")||con.equals("")) {
             Toast.makeText(this, "Field/s is/are empty.", Toast.LENGTH_SHORT).show();
+            p.dismiss();
         }else {
             user.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.hasChild(uname)) {
                         Toast.makeText(Signup.this, "Username already taken.", Toast.LENGTH_SHORT).show();
+                        p.dismiss();
                     }else{
                         if (passw.equals(cpass.getText().toString()) && passw.length() >= 8) {
                             User u = new User(uname, names, passw, citys, uidn, ques, qans, con);
@@ -70,12 +77,17 @@ public class Signup extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isComplete()) {
                                         Toast.makeText(Signup.this, "Signed up!", Toast.LENGTH_SHORT).show();
-                                    } else
+                                        p.dismiss();
+                                        finish();
+                                    } else {
                                         Toast.makeText(Signup.this, "Error" + task.toString(), Toast.LENGTH_SHORT).show();
+                                        p.dismiss();
+                                    }
                                 }
                             });
                         } else {
-                            Toast.makeText(Signup.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Signup.this, "Passwords don't match or is less than 8 characters", Toast.LENGTH_LONG).show();
+                            p.dismiss();
                         }
                     }
                 }

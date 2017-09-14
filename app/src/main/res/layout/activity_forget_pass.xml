@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/unamer"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Security Question:"
+        android:id="@+id/squ"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_weight="1"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Security Answer"
+        android:gravity="center"
+        android:id="@+id/san"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        android:onClick="get"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="New Password"
+        android:id="@+id/npass"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        android:inputType="textPassword"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm New Password"
+        android:id="@+id/ncpass"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_weight="1"
+        android:inputType="textPassword"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Password"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:onClick="reset"/>
+</LinearLayout>
+</LinearLayout>

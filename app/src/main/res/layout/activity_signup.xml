@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:hint="Adhaar number"
             android:id="@+id/UID"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="number"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
