@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         userauth.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String pass=dataSnapshot.getValue(String.class);
+                User pass=dataSnapshot.getValue(User.class);
                 if(pass!=null) {
-                    if (pass.equals(((EditText) findViewById(R.id.pass)).getText().toString())) {
+                    if ((pass.pass).equals(((EditText) findViewById(R.id.pass)).getText().toString())) {
                         Toast.makeText(MainActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(MainActivity.this, Homescreen.class);
                         startActivity(i);

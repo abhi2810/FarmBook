@@ -21,9 +21,54 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/name"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Adhaar number"
+            android:id="@+id/UID"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contact number"
+            android:id="@+id/contact"
+            android:gravity="center"
+            android:inputType="phone"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="City"
+            android:id="@+id/city"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="password"
             android:id="@+id/pass"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:inputType="textPassword"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:id="@+id/cnfpass"
+            android:gravity="center"
+            android:inputType="textPassword"/>
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Security Question"
+            android:gravity="center"
+            android:id="@+id/sq"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Security Answer"
+            android:gravity="center"
+            android:id="@+id/sans"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
