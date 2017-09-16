@@ -39,6 +39,7 @@ public class ForgetPass extends AppCompatActivity {
         uname=un.getText().toString();
         if(uname.equals("")){
             Toast.makeText(this, "Enter Username to get question!!", Toast.LENGTH_SHORT).show();
+            p.dismiss();
         }else{
             user.child(uname).child("ques").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
