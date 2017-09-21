@@ -22,14 +22,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHoder>{
+public class RecyclerAdapter1 extends RecyclerView.Adapter<RecyclerAdapter1.MyHoder>{
     DatabaseReference order=FirebaseDatabase.getInstance().getReference().child("order").getRef();
     DatabaseReference product=FirebaseDatabase.getInstance().getReference().child("product").getRef();
-    List<ProductInfo> list;
+    List<Order> list;
     Context context;
     String uname;
 
-    public RecyclerAdapter(List<ProductInfo> list, Context context,String uname) {
+    public RecyclerAdapter1(List<Order> list, Context context,String uname) {
         this.list = list;
         this.context = context;
         this.uname=uname;
@@ -38,7 +38,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHode
     @Override
     public MyHoder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.card,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.card1,parent,false);
         MyHoder myHoder = new MyHoder(view);
 
 
@@ -47,22 +47,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyHode
 
     @Override
     public void onBindViewHolder(MyHoder holder, int position) {
-        final ProductInfo mylist = list.get(position);
+        final Order mylist = list.get(position);
         holder.title.setText(mylist.getTitle());
         holder.date.setText(mylist.getDate());
-        holder.disc.setText("Order placed by:"+mylist.getDisc());
-        holder.loc.setText(mylist.getLocation());
-        final String key=order.push().getKey();
+        holder.disc.setText(mylist.getUsername());
+        holder.loc.setText(mylist.getLoc());
         holder.order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Order o=new Order(key,mylist.getTitle(),mylist.getLocation(),uname,mylist.getDate(),mylist.getUser());
-                //Toast.makeText(context, " jl"+mylist.getUser(), Toast.LENGTH_SHORT).show();
-                order.child(key).setValue(o).addOnCompleteListener(new OnCompleteListener<Void>() {
+                order.child(mylist.getOrderno()).setValue(null).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(context, "Order placed!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Order deleted.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

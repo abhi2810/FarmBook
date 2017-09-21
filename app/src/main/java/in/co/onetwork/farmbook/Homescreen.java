@@ -18,4 +18,7 @@ public class Homescreen extends AppCompatActivity {
     public void sell(View v){
         startActivity(new Intent(Homescreen.this,Sell.class));
     }
+    public void requests(View v){
+        startActivity(new Intent(Homescreen.this,ViewOrders.class));
+    }
 }

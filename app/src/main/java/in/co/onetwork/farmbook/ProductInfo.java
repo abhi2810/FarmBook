@@ -9,18 +9,30 @@ public class ProductInfo {
     String date;
     String disc;
     String location;
+    String user;
     ProductInfo(){
         title="";
         date="";
         disc="";
         location="";
+        user="";
     }
-    ProductInfo(String a,String b,String c,String d){
+    ProductInfo(String a,String b,String c,String d,String e){
         title=a;
         date=b;
         disc=c;
         location=d;
+        user=e;
     }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     public String getTitle(){
         return title;
     }

@@ -22,5 +22,11 @@
         android:layout_height="100dp"
         android:onClick="sell"
         android:src="@android:drawable/arrow_up_float"/>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="requests"
+        android:layout_marginTop="50dp"
+        android:src="@android:drawable/arrow_down_float"/>
 </LinearLayout>
 </LinearLayout>
